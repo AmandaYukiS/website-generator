@@ -6,90 +6,121 @@
 
 @layer base {
   :root {
-    /* Core palette - strict black & white */
+    /* Light theme - clean white */
     --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --foreground: 0 0% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 0 0% 0%;
+    --primary: 0 0% 9%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary-foreground: 0 0% 9%;
 
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
     --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 0%;
+    --accent-foreground: 0 0% 9%;
 
-    --destructive: 0 0% 30%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --ring: 0 0% 9%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens for the builder UI */
-    --panel-dark: 0 0% 0%;
-    --panel-dark-foreground: 0 0% 100%;
-    --panel-dark-muted: 0 0% 60%;
-    --panel-dark-border: 0 0% 20%;
+    /* Custom tokens for the builder UI - Light mode */
+    --panel-dark: 0 0% 98%;
+    --panel-dark-foreground: 0 0% 9%;
+    --panel-dark-muted: 0 0% 45%;
+    --panel-dark-border: 0 0% 90%;
     
-    --chat-user: 0 0% 15%;
-    --chat-assistant: 0 0% 8%;
+    --chat-user: 0 0% 9%;
+    --chat-assistant: 0 0% 96%;
+    --chat-user-foreground: 0 0% 100%;
+    --chat-assistant-foreground: 0 0% 9%;
     
-    --code-bg: 0 0% 4%;
-    --code-line: 0 0% 40%;
-    --code-keyword: 0 0% 70%;
-    --code-string: 0 0% 55%;
-    --code-comment: 0 0% 35%;
+    --code-bg: 0 0% 98%;
+    --code-foreground: 0 0% 9%;
+    --code-line: 0 0% 60%;
+    --code-keyword: 220 90% 50%;
+    --code-string: 140 70% 35%;
+    --code-comment: 0 0% 50%;
 
-    --sidebar-background: 0 0% 0%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 0 0% 100%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 0 0% 9%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 9%;
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Dark theme - full black */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 15%;
+    --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 0% 30%;
+    --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 98%;
+
+    /* Custom tokens for the builder UI - Dark mode */
+    --panel-dark: 0 0% 6%;
+    --panel-dark-foreground: 0 0% 98%;
+    --panel-dark-muted: 0 0% 55%;
+    --panel-dark-border: 0 0% 18%;
+    
+    --chat-user: 0 0% 20%;
+    --chat-assistant: 0 0% 10%;
+    --chat-user-foreground: 0 0% 98%;
+    --chat-assistant-foreground: 0 0% 98%;
+    
+    --code-bg: 0 0% 6%;
+    --code-foreground: 0 0% 98%;
+    --code-line: 0 0% 45%;
+    --code-keyword: 210 100% 70%;
+    --code-string: 140 70% 60%;
+    --code-comment: 0 0% 45%;
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 0% 98%;
   }
 }
 
@@ -111,16 +142,16 @@
 @layer components {
   /* Chat bubble styles */
   .chat-bubble-user {
-    @apply bg-chat-user text-panel-dark-foreground rounded-2xl rounded-br-md px-4 py-3;
+    @apply bg-chat-user text-chat-user-foreground rounded-2xl rounded-br-md px-4 py-3;
   }
 
   .chat-bubble-assistant {
-    @apply bg-chat-assistant text-panel-dark-foreground rounded-2xl rounded-bl-md px-4 py-3;
+    @apply bg-chat-assistant text-chat-assistant-foreground rounded-2xl rounded-bl-md px-4 py-3;
   }
 
   /* Code editor styling */
   .code-editor {
-    @apply bg-code-bg font-mono text-sm leading-relaxed;
+    @apply bg-code-bg font-mono text-sm leading-relaxed text-code-foreground;
   }
 
   .code-line-number {
@@ -155,11 +186,11 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-panel-dark-border rounded-full;
+    @apply bg-border rounded-full;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-panel-dark-muted;
+    @apply bg-muted-foreground;
   }
 }
 

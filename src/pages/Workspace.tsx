@@ -3,8 +3,14 @@ import ChatPanel from "@/components/ChatPanel";
 import OutputPanel from "@/components/OutputPanel";
 import PreviewContent from "@/components/PreviewContent";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Sparkles } from "lucide-react";
+import { ArrowLeft, Sparkles, Github, Share2, Moon, Sun, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/components/ThemeProvider";
+import {
+  ResizablePanelGroup,
+  ResizablePanel,
+  ResizableHandle,
+} from "@/components/ui/resizable";
 
 interface Message {
   id: string;
@@ -61,6 +67,7 @@ export default LandingPage;`;
 
 const Workspace = () => {
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [previewType, setPreviewType] = useState<PreviewType>("empty");
@@ -129,35 +136,62 @@ const Workspace = () => {
             <span className="font-semibold text-sm">buildAI Workspace</span>
           </div>
         </div>
+        
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm">
-            Save
+          <Button variant="ghost" size="sm" className="gap-2">
+            <Share2 className="w-4 h-4" />
+            Share
           </Button>
-          <Button size="sm">
-            Export
+          <Button variant="ghost" size="sm" className="gap-2">
+            <Github className="w-4 h-4" />
+            GitHub
+          </Button>
+          <Button variant="outline" size="sm">
+            Upgrade
+          </Button>
+          <div className="h-6 w-px bg-border" />
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="h-8 w-8"
+          >
+            {theme === "dark" ? (
+              <Sun className="w-4 h-4" />
+            ) : (
+              <Moon className="w-4 h-4" />
+            )}
+          </Button>
+          <Button size="sm" className="gap-2">
+            <Rocket className="w-4 h-4" />
+            Publish
           </Button>
         </div>
       </header>
 
-      {/* Main Content */}
-      <div className="flex-1 flex overflow-hidden">
-        {/* Chat Panel */}
-        <div className="w-[380px] flex-shrink-0 border-r border-border animate-slide-in-left">
-          <ChatPanel
-            messages={messages}
-            onSendMessage={handleSendMessage}
-            isLoading={isLoading}
-          />
-        </div>
-
-        {/* Output Panel */}
-        <div className="flex-1 animate-slide-in-right">
-          <OutputPanel
-            previewContent={<PreviewContent type={previewType} />}
-            codeContent={currentCode}
-          />
-        </div>
-      </div>
+      {/* Main Content - Resizable Panels */}
+      <ResizablePanelGroup direction="horizontal" className="flex-1">
+        <ResizablePanel defaultSize={30} minSize={20} maxSize={50}>
+          <div className="h-full animate-slide-in-left">
+            <ChatPanel
+              messages={messages}
+              onSendMessage={handleSendMessage}
+              isLoading={isLoading}
+            />
+          </div>
+        </ResizablePanel>
+        
+        <ResizableHandle withHandle />
+        
+        <ResizablePanel defaultSize={70}>
+          <div className="h-full animate-slide-in-right">
+            <OutputPanel
+              previewContent={<PreviewContent type={previewType} />}
+              codeContent={currentCode}
+            />
+          </div>
+        </ResizablePanel>
+      </ResizablePanelGroup>
     </div>
   );
 };

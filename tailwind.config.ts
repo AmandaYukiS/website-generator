@@ -54,9 +54,16 @@ export default {
           muted: "hsl(var(--panel-dark-muted))",
           border: "hsl(var(--panel-dark-border))",
         },
-        "chat-user": "hsl(var(--chat-user))",
-        "chat-assistant": "hsl(var(--chat-assistant))",
+        "chat-user": {
+          DEFAULT: "hsl(var(--chat-user))",
+          foreground: "hsl(var(--chat-user-foreground))",
+        },
+        "chat-assistant": {
+          DEFAULT: "hsl(var(--chat-assistant))",
+          foreground: "hsl(var(--chat-assistant-foreground))",
+        },
         "code-bg": "hsl(var(--code-bg))",
+        "code-foreground": "hsl(var(--code-foreground))",
         "code-line": "hsl(var(--code-line))",
         "code-keyword": "hsl(var(--code-keyword))",
         "code-string": "hsl(var(--code-string))",
