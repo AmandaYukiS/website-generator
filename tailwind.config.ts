@@ -47,6 +47,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom colors for the builder
+        "panel-dark": {
+          DEFAULT: "hsl(var(--panel-dark))",
+          foreground: "hsl(var(--panel-dark-foreground))",
+          muted: "hsl(var(--panel-dark-muted))",
+          border: "hsl(var(--panel-dark-border))",
+        },
+        "chat-user": "hsl(var(--chat-user))",
+        "chat-assistant": "hsl(var(--chat-assistant))",
+        "code-bg": "hsl(var(--code-bg))",
+        "code-line": "hsl(var(--code-line))",
+        "code-keyword": "hsl(var(--code-keyword))",
+        "code-string": "hsl(var(--code-string))",
+        "code-comment": "hsl(var(--code-comment))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -63,27 +77,28 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
+      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        pulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },
